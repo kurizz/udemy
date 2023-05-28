@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  sample-mysql:
+    image: mysql:8.0.28
+    volumes:
+      - ./4-9/:/docker-entrypoint-initdb.d
+      - ./4-9/db/:/var/lib/mysql
+      - ./4-9/conf.d/:/etc/mysql/conf.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: hoge
+      TZ: "Asia/Tokyo"
+    ports:
+      - "9999:3306"
