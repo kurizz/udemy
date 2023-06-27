@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  sample-mysql-10-14:
+    image: mysql:8.0.28
+    volumes:
+      - ./10-14/:/docker-entrypoint-initdb.d
+      - ./10-14/db/:/var/lib/mysql
+      - ./10-14/conf.d/:/etc/mysql/conf.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fuga
+      TZ: "Asia/Tokyo"
+    ports:
+      - "9999:3306"
