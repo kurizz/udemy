@@ -1,0 +1,4 @@
+https://www.udemy.com/course/3sqlmysql/
+
+`rm -rf db/*` してから `.* up -d` する。
+dump ファイルは講座リンクからダウンロードする。
